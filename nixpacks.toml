@@ -1,6 +1,6 @@
 # Nixpacks configuration for Railway
 [phases.setup]
-nixPkgs = ["maven", "jdk21"]
+nixPkgs = ["maven", "jdk"]
 
 [phases.build]
 cmds = ["cd backend && ./mvnw clean package -DskipTests"]
