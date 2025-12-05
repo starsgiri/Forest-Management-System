@@ -104,10 +104,10 @@ CREATE TABLE Resources (
     cost DECIMAL(10,2),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (assigned_officer_id) REFERENCES ForestOfficers(officer_id) ON DELETE SET NULL
+    FOREIGN KEY (assigned_officer_id) REFERENCES ForestOfficers(officer_id)
 );
 
--- Create Indexes for better query performance
+-- Create Indexes for Better Performance
 CREATE INDEX idx_animals_zone ON Animals(zone);
 CREATE INDEX idx_animals_conservation ON Animals(conservation_status);
 CREATE INDEX idx_trees_zone ON Trees(zone);
@@ -121,4 +121,4 @@ CREATE INDEX idx_resources_zone ON Resources(assigned_zone);
 CREATE INDEX idx_resources_type ON Resources(resource_type);
 
 -- Display success message
-SELECT 'Database and all tables created successfully!' AS Status;
+SELECT 'Database and tables created successfully!' AS Status;
